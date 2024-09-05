@@ -107,8 +107,12 @@
      php
      php83Packages.composer	# long
      dart-sass 	# i'd rather kill myself than use raw css for anything ever
-     rustc
+     rustup
+     gcc
+     cmake
+     gnumake
      libgcc
+     udev
      go
      zig
      nodejs_21
@@ -116,9 +120,11 @@
      apacheHttpd
      nodePackages.http-server
      yarn
-     nodePackages."@angular/cli"
+     wineWowPackages.stable
+     winetricks
   ];
 
+  services.flatpak.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -126,6 +132,11 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+  # bluetooth
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
 
   # List services that you want to enable:
 
